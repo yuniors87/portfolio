@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 
 const StyledLink = styled(props => <Link {...props} />)`
-// color: white;
+  // color: white;
   text-decoration: none;
 `
 const StyledNav = styled.nav`
@@ -52,15 +52,15 @@ const StyledLinks = styled.ul`
     height: 100vh;
     width: 100%;
     flex-direction: column;
-    clip-path: circle(100px at 90% -10%);
-    -webkit-clip-path: circle(100px at 90% -10%);
-    &.open {
-      clip-path: circle(1000px at 90% -10%);
-      -webkit-clip-path: circle(1000px at 90% -10%);
-    }
-    &.loading {
-      flex-direction: column;
-    }
+    background: ${props =>
+      props.opened
+        ? `circle(1100px at 90% -10%)`
+        : `circle(100px at 90% -10%)`};
+    -webkit-clip-path: ${props =>
+      props.opened
+        ? `circle(1100px at 90% -10%)`
+        : `circle(100px at 90% -10%)`};
+    transition: all .4s ease-in;
   }
 `
 
@@ -73,10 +73,14 @@ class Header extends React.Component {
   //   </StyledContainner>
   // </StyledHeader>
   constructor(props) {
-    super(props);
+    super(props)
+    this.state = {
+      menuOpened: false,
+    }
   }
   handleClick = () => {
-    console.log('this is:', this);
+    const actualState = this.state.menuOpened
+    this.setState({ menuOpened: !actualState })
   }
 
   render() {
@@ -87,7 +91,7 @@ class Header extends React.Component {
           <StyledLine />
           <StyledLine />
         </StyledHamburger>
-        <StyledLinks>
+        <StyledLinks opened={this.state.menuOpened}>
           <li>
             <StyledLink to="/about">About</StyledLink>
           </li>
