@@ -1,15 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 
-import './layout.css'
+import Menu from './menu'
+
+import './normalize.css'
 
 const StyledContainner = styled.div`
-  margin: 0 auto;
-  max-width: 960px;
-  padding: 0px 1.0875rem 1.45rem;
-  padding-top: 0;
+  height: 100vh;
 `
 
 const Layout = ({ children }) => {
@@ -24,11 +24,10 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
-      <StyledContainner>
-        <main>{children}</main>
-      </StyledContainner>
-    </>
+    <StyledContainner>
+      <Menu />
+      {children}
+    </StyledContainner>
   )
 }
 

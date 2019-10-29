@@ -1,10 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `alberto mariscal`,
+    title: `Alberto Mariscal`,
     description: `This is my personal site/portfolio.`,
     author: `@yuniors87`,
   },
   plugins: [
+    `gatsby-plugin-transition-link`,
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
