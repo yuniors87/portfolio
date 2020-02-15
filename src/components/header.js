@@ -3,9 +3,7 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 
 const StyledHeader = styled.header`
-  height: 6rem;
-  width: 100%;
-  padding: 0 3rem;
+  padding: 0 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;

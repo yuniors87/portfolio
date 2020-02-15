@@ -1,6 +1,7 @@
 import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 import Header from './header'
+import './reset.css'
 
 // #114668
 // #E44D3F
@@ -16,16 +17,18 @@ const theme = {
   fontSizeXL: '3rem',
 }
 const StyledBody = styled.div`
-  background: ${props => props.theme.baseColor};
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  color: ${props => props.theme.secondColor};
-`
-const StyledContainner = styled.div`
+  font-family: 'Lato', sans-serif;
+
   height: 100vh;
   width: 100%;
-  margin: 0 6rem;
+  background: ${props => props.theme.baseColor};
+  color: ${props => props.theme.secondColor};
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 6rem 1fr;
+`
+const StyledContainner = styled.div`
+  margin: 0 10rem;
 `
 
 const Layout = ({ children }) => (
