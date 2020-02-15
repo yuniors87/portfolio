@@ -17,8 +17,7 @@ const theme = {
   fontSizeXL: '3rem',
 }
 const StyledBody = styled.div`
-  font-family: 'Lato', sans-serif;
-
+  font-family: 'Didact Gothic', sans-serif;
   height: 100vh;
   width: 100%;
   background: ${props => props.theme.baseColor};
