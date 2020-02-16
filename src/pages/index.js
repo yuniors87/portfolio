@@ -1,14 +1,11 @@
 import React from 'react'
-import styled from 'styled-components'
 import Layout from '../components/layout'
-
-const StyledMain = styled.div``
 
 const IndexPage = () => (
   <Layout>
-    <StyledMain>
+    <div>
       <p>Hola</p>
-    </StyledMain>
+    </div>
   </Layout>
 )
 
