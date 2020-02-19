@@ -1,6 +1,5 @@
 import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
-import Header from './header'
 import './reset.css'
 
 // #114668
@@ -9,8 +8,9 @@ import './reset.css'
 // https://www.banzaiskate.com/
 
 const theme = {
-  baseColor: '#E44D3F',
-  secondColor: '#114668',
+  baseColor: '#eff6ff',
+  secondColor: '#fbfcff',
+  thirdColor: '#114668',
   fontSizeMediun: '1rem',
   fontSizeSmall: '0.8rem',
   fontSizeLarge: '1.5rem',
@@ -21,19 +21,21 @@ const StyledBody = styled.div`
   height: 100vh;
   width: 100%;
   background: ${props => props.theme.baseColor};
-  color: ${props => props.theme.secondColor};
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 6rem 1fr;
+  color: ${props => props.theme.thirdColor};
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 const StyledContainner = styled.div`
-  margin: 0 10rem;
+  width: 700px;
+  height: 80vh;
+  background: ${props => props.theme.secondColor};
+  box-shadow: rgba(0, 0, 0, 0.125) 0 5px 15px;
 `
 
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
     <StyledBody>
-      <Header />
       <StyledContainner>{children}</StyledContainner>
     </StyledBody>
   </ThemeProvider>
